@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package github_issues_encoder;
+option csharp_namespace = "GithubGRPCServer";
+
+service Encoder {
+    // Sends a greeting
+    rpc Encode (Issue) returns (EncodedIssue) {}
+  }
+
+// The request message containing the user's name.
+message Issue {
+    string text = 1;
+  }
+  
+  // The response message containing the greetings
+  message EncodedIssue {
+    repeated int64 input_ids = 1;
+    repeated int64 attention_mask = 2;
+  }
+  
