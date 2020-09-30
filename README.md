@@ -14,4 +14,9 @@
 
  I also used the occasion to try out using Pytorch Lightning (PL). The model trains but this is still a work in progress at the moment.
 
+## GRPC Server
 
+The "grpc_server" folder contains implementation of a GRPC server whose role is to tokenize an input sentence using the HuggingFace tokenizers.
+I created the proto and generated the server and client code.
+This is used to be able to tokenize the input sequences when calling the model using a language other than Python (C# in my case).
+In my C# web app, I load the ONNX model and send a GRPC request to this server with the input sentence to receive the correct tokens for the model input.
