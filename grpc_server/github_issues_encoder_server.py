@@ -30,5 +30,5 @@ def serve(tokenizer, max_len):
 if __name__ == '__main__':
     logging.basicConfig()
     tokenizer = RobertaTokenizerFast.from_pretrained("roberta-base")
-    max_len = 64
+    max_len = 128
     serve(tokenizer, max_len)
